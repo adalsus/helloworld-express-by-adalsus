@@ -16,8 +16,11 @@ app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/adalsus", (req, res) => {
+  res.send('Hola Adalberto!!!');
+});
+
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
-  console.log(listener);
-  console.log("Your app is listening on " + listener.address().path + "port " + listener.address().port);
+  console.log("Your app is listening on port" + listener.address().port);
 });
