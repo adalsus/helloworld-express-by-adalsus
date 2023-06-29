@@ -1,6 +1,6 @@
 // init project
-const server = require('./app.js');
 require('dotenv').config();
+const server = require('./app.js');
 const PORT = process.env.PORT || 3001;
 
 // listen for requests :)

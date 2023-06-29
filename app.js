@@ -4,22 +4,13 @@
 
 // init project
 const express = require("express");
-const app = express();
+var favicon = require('serve-favicon')
+var path = require('path')
+const app = express()
+const tree = require('./src/tree/tree.js')
 
-// we've started you off with Express,
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
-// http://expressjs.com/en/starter/static-files.html
-app.use(express.static("public"));
-
-// http://expressjs.com/en/starter/basic-routing.html
-/*app.get("/", function(request, response) {
-  response.sendFile(__dirname + "/views/index.html");
-});*/
-
-app.get("/", (req, res) => {
-  res.send('Hello World!!!');
-});
-
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+tree(app)
 
 module.exports = app;
